@@ -1,0 +1,23 @@
+{
+  "$schema": "https://unpkg.com/api@8/schema.json",
+  "apis": [
+    {
+      "private": true,
+      "identifier": "render-public-api",
+      "source": ".\\render-openapi.json",
+      "integrity": "sha512-rsOVkavovzxlJ+zaM3EPE1KqyLx6UKo+WE9vqpUZYrQ3nnPN7MlzlRcht9FSbhnCAsWaRdTTmI9JniTp/ReuQA==",
+      "installerVersion": "8.0.1",
+      "language": "js",
+      "createdAt": "2026-11-24T21:01:55.867Z"
+    },
+    {
+      "private": true,
+      "identifier": "render-api",
+      "source": ".\\render-openapi.json",
+      "integrity": "sha512-rsOVkavovzxlJ+zaM3EPE1KqyLx6UKo+WE9vqpUZYrQ3nnPN7MlzlRcht9FSbhnCAsWaRdTTmI9JniTp/ReuQA==",
+      "installerVersion": "8.0.1",
+      "language": "js",
+      "createdAt": "2026-11-24T21:03:49.283Z"
+    }
+  ]
+}

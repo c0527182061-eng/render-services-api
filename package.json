@@ -1,0 +1,20 @@
+{
+  "name": "render-services-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@api/render-api": "file:.api/apis/render-api",
+    "@api/render-public-api": "file:.api/apis/render-public-api",
+    "api": "^8.0.1",
+    "express": "^5.3.0"
+  }
+}
