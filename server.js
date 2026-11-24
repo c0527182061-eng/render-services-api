@@ -1,37 +1,20 @@
-import axios from 'axios';
+import express from 'express';
+import renderApi from '@api/render-api';
 
-axios.defaults.baseURL =
-  process.env.REACT_APP_API_URL;
+const app = express();
 
+renderApi.auth(process.env.RENDER_API_KEY);
 
+  app.get('/services', async (req, res) => {
+  try {
+    const { data } = await renderApi.listServices({
+      includePreviews: 'true',
+      limit: '20',
+    });
 
-axios.interceptors.response.use(
-  response => response,
-  error => {
-    console.error('API Error:', error);
-    return Promise.reject(error);
+    res.json(data);
+  } catch {
+    res.status(502).json({ error: 'Could not list Render services' });
   }
-);
-
-export default {
-  getTasks: async () => {
-    const result = await axios.get(`items`)    
-    return result.data;
-  },
-
-  addTask: async(name)=>{
-    const result=await axios.post(`items`,{name:name,isComplete:false})    
-    return result.data;
-  },
-
-  setCompleted: async(id, isComplete)=>{
-   const result=await axios.put(`items/${id}`,{isComplete:isComplete})    
-    return result.data;
-   
-  },
-
-  deleteTask:async(id)=>{
-       const result=await axios.delete(`items/${id}`)    
-    return result.data;
-  }
-};
+});
+app.listen(process.env.PORT || 3000);
